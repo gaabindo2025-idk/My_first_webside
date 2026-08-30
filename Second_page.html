@@ -1,0 +1,105 @@
+<h1>Halo, <span id="nama"></span>! 👋</h1>
+
+<script>
+const nama = localStorage.getItem("namaPengguna");
+
+document.getElementById("nama").textContent = nama;
+</script>
+
+<title> My First Webside </title>
+<style>
+  body{
+    background: linear-gradient(rgba(0,0,0,0.8)) blue;
+    background-image: linear-gradient(rgba(0,0,0,0.8)),url('Lake.jpg');
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+  }
+  
+  button{
+    background: red;
+    padding: 10px  20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: alll 0.5s;
+    box-shadow: 0 0 16px black, inset 0 0 16px black;
+  }
+  
+  button:hover{
+    background: #B50000;
+  }
+  
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background-color: black;
+  border-radius: 25px;
+  width: 300px;
+  padding: 25px;
+  color: white;
+  border: 2px solid red;
+  box-shadow: 0 0 15px red, inset 0 0 15px red;
+  text-align: center;
+}
+
+.popup-box button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+</style>
+
+<hr>
+
+<h2> Selamat datang di Halaman ke-2 </h2>
+<hr>
+<button onclick="Popup1()">
+  Please subscribe our Channel
+</button><br>
+<hr>
+<button onclick="Popup2()">
+  Jangan Ditekan!
+</button>
+<hr>
+
+<!-- Popup 1 -->
+<div class="popup" id="popup1">
+  <div class="popup-box">
+    <h2> ⚠️ Peringatan </h2>
+    <p> Ingin buka YouTube?</p>
+    <button onclick="window.open('https://www.youtube.com/@Gaabindo2025')">Ya</button>
+    <button onclick="tutup('popup1')"> Tidak </button>
+  </div>
+</div>
+<!-- Popup 2 -->
+<div class="popup" id="popup2">
+  <div class="popup-box">
+    <h2> ⚠️ Peringatan </h2>
+    <p> Mengapa kamu menekannya?! </p>
+    <button onclick="tutup('popup2')">OK</button>
+  </div>
+</div>
+
+<script>
+function Popup1() {
+  document.getElementById("popup1").style.display = "flex";
+}
+
+function Popup2() {
+  document.getElementById("popup2").style.display = "flex";
+}
+
+function tutup(id) {
+  document.getElementById(id).style.display = "none";
+}
+</script>
